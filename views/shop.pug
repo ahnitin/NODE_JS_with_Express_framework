@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/shop.css")
+        link(rel="stylesheet", href="/css/form.css")
+    body 
+        header.main-header
+            nav.main-header-nav
+                ul.main-header-item-list
+                    li.main-header-item
+                        a.active(href="/") SHOP 
+                    li.main-header-item
+                        a(href="/admin/add-product") Add Product
+        main
+            div.grid
+                each product in prods
+                    article.card.product-item
+                        header.card-header
+                            h1.product-title Great Book 
+                        div.card-image
+                            img(src="https://media.istockphoto.com/id/1354441996/photo/image-of-open-antique-book-on-wooden-table-with-glitter-overlay.jpg?s=1024x1024&w=is&k=20&c=eic0DxSy2AwsGpzs_UNsOly0u3keoPJDYoAi5Zzex9s=", alt="Laptop")
+                        div.card-content 
+                            h2.product-price $19.19
+                            p.product-description A very Interesting book about so many even more interesting things
+                        div.card-actions
+                            button.btn Add To Cart
+
+                
