@@ -8,7 +8,8 @@ router.get("/",(req,res,next)=>{
     console.log(adminData.products);
     res.render('shop',{ 
         prods: adminData.products,
-        docTitle: "Shop"
+        pageTitle: "Shop",
+        path: "/"
         })
 })
 module.exports= router;
