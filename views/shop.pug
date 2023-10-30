@@ -15,17 +15,18 @@ html(lang="en")
                     li.main-header-item
                         a(href="/admin/add-product") Add Product
         main
-            div.grid
-                each product in prods
-                    article.card.product-item
-                        header.card-header
-                            h1.product-title Great Book 
-                        div.card-image
-                            img(src="https://media.istockphoto.com/id/1354441996/photo/image-of-open-antique-book-on-wooden-table-with-glitter-overlay.jpg?s=1024x1024&w=is&k=20&c=eic0DxSy2AwsGpzs_UNsOly0u3keoPJDYoAi5Zzex9s=", alt="Laptop")
-                        div.card-content 
-                            h2.product-price $19.19
-                            p.product-description A very Interesting book about so many even more interesting things
-                        div.card-actions
-                            button.btn Add To Cart
+            if prods.length>0
+                div.grid
+                    each product in prods
+                        article.card.product-item
+                            header.card-header
+                                h1.product-title #{product.title} 
+                            div.card-image
+                                img(src="https://media.istockphoto.com/id/1354441996/photo/image-of-open-antique-book-on-wooden-table-with-glitter-overlay.jpg?s=1024x1024&w=is&k=20&c=eic0DxSy2AwsGpzs_UNsOly0u3keoPJDYoAi5Zzex9s=", alt="Laptop")
+                            div.card-content 
+                                h2.product-price $19.19
+                                p.product-description A very Interesting book about so many even more interesting things
+                            div.card-actions
+                                button.btn Add To Cart
 
                 

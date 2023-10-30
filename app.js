@@ -19,7 +19,9 @@ app.use(shopRoutes);
 
 app.use("/",(req,res,next)=>{
     res.status(404);
-    res.sendFile(path.join(__dirname,"views","404.html"))
+    res.render('404',{
+        errortitle:"Error Page"
+    })
 })
 
 app.listen(4000);
