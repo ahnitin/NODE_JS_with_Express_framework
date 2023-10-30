@@ -6,9 +6,20 @@ const BodyParser = require("body-parser");
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const path = require("path");
+
+const expressHbs = require("express-handlebars");
+
 app.use(BodyParser.urlencoded({extended:false}))
 
-app.set('view engine','pug');
+app.engine('hbs',expressHbs.engine({
+    extname: 'hbs',
+    defaultLayout: '',
+    layoutsDir: '',
+
+}))
+//setting engine for handle bars
+
+app.set('view engine','hbs');
 app.set('views','views');
 
 app.use(express.static(path.join(__dirname,"public")))
