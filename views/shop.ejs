@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> <%= pageTitle %> </title>
+    <link rel="stylesheet" href="/css/shop.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header-nav">
+        <ul class="main-header-item-list">
+          <li class="main-header-item"><a class="active" href="/">Shop</a></li>
+          <li class="main-header-item">
+            <a href="/admin/add-product">Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <% if(prods.length>0){ %>
+        <div class="grid">
+            <% for(let product of prods) { %>
+            <article class="card-product-item">
+                    <header class="card-header">
+                        <h1 class="product-title"> <%= product.title %> </h1>
+                    </header>
+                    <div class="card-image">
+                        <img src="" alt="Laptop">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="product-price">$19.19</h2>
+                        <p class="product-description">A very interesting bbok</p>
+                    </div>
+            </article>
+            <% } %>
+        </div>
+        <% } else { %>
+            <h1>No Products Available!</h1>
+        <% } %>
+    </main>
+    
+  </body>
+</html>
