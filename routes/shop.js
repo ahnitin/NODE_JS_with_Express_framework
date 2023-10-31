@@ -9,7 +9,11 @@ router.get("/",(req,res,next)=>{
     res.render('shop',{ 
         prods: adminData.products,
         pageTitle: "Shop",
-        path: "/"
+        path: "/",
+        hasProducts: adminData.products.length>0,
+        formCSS: true,
+        productCSS: true,
+        activeShop: true,
         })
 })
 module.exports= router;

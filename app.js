@@ -13,8 +13,8 @@ app.use(BodyParser.urlencoded({extended:false}))
 
 app.engine('hbs',expressHbs.engine({
     extname: 'hbs',
-    defaultLayout: '',
-    layoutsDir: '',
+    defaultLayout: 'main-layout',
+    layoutsDir: 'views/layouts',
 
 }))
 //setting engine for handle bars

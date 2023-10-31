@@ -1,0 +1,25 @@
+
+
+<main>
+    {{#if hasProducts}}
+    <div class="grid">
+        {{#each prods}}
+        <article class="card-product-item">
+                <header class="card-header">
+                    <h1 class="product-title">{{this.title}}</h1>
+                </header>
+                <div class="card-image">
+                    <img src="" alt="Laptop">
+                </div>
+                <div class="card-content">
+                    <h2 class="product-price">$19.19</h2>
+                    <p class="product-description">A very interesting bbok</p>
+                </div>
+
+        </article>
+        {{/each}}
+    </div>
+    {{else}}
+        <h1>No Products Available!</h1>
+    {{/if}}
+</main>
