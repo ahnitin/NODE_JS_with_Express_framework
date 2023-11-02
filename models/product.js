@@ -18,12 +18,16 @@ const getProductsFromFiles =(cb)=>{
 }
 
 module.exports = class Product{
-    constructor(IncommingTitle)
+    constructor(IncommingTitle,description,price,imageUrl)
     {
         this.title = IncommingTitle;
+        this.description = description;
+        this.price = price;
+        this.imageUrl = imageUrl;
     }
     save()
     {
+        this.productId =Math.round(Math.random() *1000 ).toString();
         getProductsFromFiles((products)=>{
             products.push(this)//this is pointing to class instance
             fs.writeFile(pathBuild, JSON.stringify(products),(err)=>{

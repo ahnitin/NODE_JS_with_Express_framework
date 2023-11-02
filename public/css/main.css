@@ -77,6 +77,7 @@ button:active {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
+  align-content: center;
 }
 
 .card {
@@ -104,11 +105,83 @@ button:active {
 }
 
 .card-actions {
+  display: flex;
   padding: 1rem;
   text-align: center;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-actions button,
 .card-actions a {
   margin: 0 0.25rem;
+}
+.form-control {
+  margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+  display: block;
+  width: 100%;
+}
+
+.form-control input,
+.form-control textarea {
+  border: 1px solid #0f0f0f;
+  font: inherit;
+  border-radius: 2px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  border-color: rgba(48, 48, 48, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(49, 49, 48, 0.6);
+  outline: 0 none;
+}
+.product-form {
+  width: 20rem;
+  max-width: 90%;
+  margin: auto;
+}
+
+.product-item {
+  width: 20rem;
+  max-width: 95%;
+  margin-bottom: 1em;
+  border-radius: 1em;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.product-price {
+  text-align: center;
+  color: #4d4d4d;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  text-align: center;
+}
+.link-btn {
+  font: inherit;
+  border: 1px solid #121212;
+  color: #000000;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1px 8px;
+}
+.link-btn:active,
+.link-btn:hover {
+  background-color: #272727;
+  color: white;
 }

@@ -1,1 +1,30 @@
-[{"title":"asdf"},{"title":"yukta"},{"title":"asdfasfgsag"}]
+[
+    {
+        "productId": "29",
+        "title": "Magic book",
+        "description": "this is an amazing book",
+        "price": "299",
+        "imageUrl": "https://source.unsplash.com/random/200x200?sig=1"
+    },
+    {
+        "productId": "25",
+        "title": "Telepathy",
+        "description": "this book is written by Vaishali Gupta",
+        "price": "22",
+        "imageUrl": "https://source.unsplash.com/random/200x200?sig=2"
+    },
+    {
+        "productId": "49",
+        "title": "My Autobiography",
+        "description": "The book was written by Miss Himani. this book contains the sacrifices which are made by a woman in this society.",
+        "price": "199",
+        "imageUrl": "https://source.unsplash.com/random/200x200?sig=3"
+    },
+    {
+        "productId": "292",
+        "title": "asdf",
+        "description": "dsafgsfads,l;lsjfakljms",
+        "price": "415",
+        "imageUrl": "https://picsum.photos/200/300?nocache=<?php echo microtime(); ?>"
+    }
+]
