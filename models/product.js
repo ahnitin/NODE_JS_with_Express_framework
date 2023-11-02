@@ -1,6 +1,21 @@
 const fs = require("fs");
 const path = require("path");
-
+const pathBuild = path.join(path.dirname(require.main.filename),
+        "data",
+        "products.json");
+const getProductsFromFiles =(cb)=>{
+    fs.readFile(pathBuild,(err,data)=>{
+        if(err)
+        {
+            cb([]);
+        }
+        else
+        {
+            cb(JSON.parse(data));
+        }
+        
+    })
+}
 
 module.exports = class Product{
     constructor(IncommingTitle)
@@ -9,15 +24,7 @@ module.exports = class Product{
     }
     save()
     {
-        const pathBuild = path.join(path.dirname(require.main.filename),
-        "data",
-        "products.json");
-        fs.readFile(pathBuild,(err,data)=>{
-            let products = [];
-            if(!err)
-            {
-                products = JSON.parse(data);
-            }
+        getProductsFromFiles((products)=>{
             products.push(this)//this is pointing to class instance
             fs.writeFile(pathBuild, JSON.stringify(products),(err)=>{
                 console.log(err);
@@ -27,16 +34,7 @@ module.exports = class Product{
     }
     static fetchAll(cb)
     {
-        const pathBuild = path.join(path.dirname(require.main.filename),
-        "data",
-        "products.json");
+        getProductsFromFiles(cb);
 
-        fs.readFile(pathBuild,(err,data)=>{
-            if(err)
-            {
-                cb([]);
-            }
-            cb(JSON.parse(data));
-        })
     }
 }
