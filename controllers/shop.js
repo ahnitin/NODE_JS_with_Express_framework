@@ -18,10 +18,15 @@ exports.getMyProductDetails =(req,res,next)=>{
     const productId = req.params.productId;
     console.log(productId);
     //filter the data using the product id
-    res.render('shop/product-details',{
-        pageTitle:"My product Details",
-        path: "/product-details",
-    })
+    Product.findProductById(productId,(product)=>{
+        res.render('shop/product-details',{
+
+            pageTitle:"My product Details",
+            path: "/product-details",
+            productDetails: product,
+        })
+    });
+
     
 }
 exports.DeleteProduct =(req,res,next)=>{
