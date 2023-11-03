@@ -18,8 +18,9 @@ const getProductsFromFiles =(cb)=>{
 }
 
 module.exports = class Product{
-    constructor(IncommingTitle,description,price,imageUrl)
+    constructor(productId,IncommingTitle,description,price,imageUrl)
     {
+        this.productId= productId;
         this.title = IncommingTitle;
         this.description = description;
         this.price = price;
@@ -36,6 +37,20 @@ module.exports = class Product{
         })
         
     }
+    saveModifiedFile()
+    {
+            getProductsFromFiles((products)=>{
+                const existingProduct = products.findIndex(
+                    product=> product.productId === this.productId
+                );
+                const modifiedProducts = [...products];
+                modifiedProducts[existingProduct] = this
+                console.log(this)
+                fs.writeFile(pathBuild, JSON.stringify(modifiedProducts),(err)=>{
+                    console.log(err);
+                })
+            })
+    }
     static fetchAll(cb)
     {
         getProductsFromFiles(cb);
@@ -48,6 +63,18 @@ module.exports = class Product{
                 return product.productId == id;
             })
             callback(product);
+        })
+    }
+
+   static remove(id)
+    {
+        getProductsFromFiles((products)=>{
+            const UpdatedProducts = products.filter(product =>{
+                return product.productId !== id
+            })
+            fs.writeFile(pathBuild, JSON.stringify(UpdatedProducts),(err)=>{
+                console.log(err);
+            })
         })
     }
 }

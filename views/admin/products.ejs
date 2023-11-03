@@ -23,6 +23,7 @@
                     <div class="card-actions">
                         <button class="btn" onclick="window.location.href='/admin/edit-product/<%=product.productId%>'">Edit</button>
                         <form action="/admin/remove-product" method="POST">
+                            <input type="hidden" value="<%= product.productId %>" name="productId">
                             <button class="btn" type="submit">Delete</button>
                         </form>
                         
