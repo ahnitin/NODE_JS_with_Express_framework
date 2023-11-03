@@ -21,9 +21,9 @@
                         <p class="product-description"><%= product.description %></p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn" onclick="window.location.href='/admin/edit-product/<%=product.productId%>'">Edit</button>
+                        <button class="btn" onclick="window.location.href='/admin/edit-product/<%=product.id%>'">Edit</button>
                         <form action="/admin/remove-product" method="POST">
-                            <input type="hidden" value="<%= product.productId %>" name="productId">
+                            <input type="hidden" value="<%= product.id %>" name="id">
                             <button class="btn" type="submit">Delete</button>
                         </form>
                         

@@ -8,6 +8,9 @@ const shopRoutes = require("./routes/shop");
 const errorController = require("./controllers/error");
 const path = require("path");
 
+const sequelize = require("./connection/database");
+//const { FORCE } = require("sequelize/types/index-hints");
+
 app.use(BodyParser.urlencoded({extended:false}))
 
 app.set('view engine','ejs');
@@ -21,4 +24,15 @@ app.use(shopRoutes);
 
 app.use("/",errorController.errorpage);
 
-app.listen(4000);
+sequelize
+//.sync({force:true})
+.sync()
+.then(res =>{
+    console.log("Table Created")
+    app.listen(4000);
+})
+.catch(err=>{
+    console.log(err);
+})
+
+

@@ -16,7 +16,7 @@ router.get("/admin-product",adminController.getAdminProducts);
 
 router.post("/add-product",adminController.postAddProduct);
 
-router.get("/edit-product/:productId",adminController.getEditMyproduct);
+router.get("/edit-product/:id",adminController.getEditMyproduct);
 router.post("/edit-product",adminController.saveModifiedProduct);
 
 // Post delete product

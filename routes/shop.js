@@ -8,8 +8,8 @@ const admin = require("./admin");
 router.get("/",productController.getShopIndex)
 
 router.get("/products",productController.getProducts)
-router.get("/product/:productId",productController.getMyProductDetails);
-router.get("/delete/:productId",productController.DeleteProduct);
+router.get("/product/:id",productController.getMyProductDetails);
+router.get("/delete/:id",productController.DeleteProduct);
 router.get("/cart",productController.getMyCart)
 router.get("/checkout",productController.getCheckout)
 router.get("/orders",productController.getMyOrders)
